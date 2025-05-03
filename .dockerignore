@@ -1,0 +1,10 @@
+# ทำให้ image เบาและ build เร็ว
+node_modules
+.next
+backend
+# ระบบควบคุมเวอร์ชัน / ไฟล์ล็อก
+.git
+.gitignore
+npm-debug.log
+Dockerfile*
+docker-compose*.yml
