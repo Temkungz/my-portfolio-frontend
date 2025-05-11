@@ -1,7 +1,7 @@
 export default function About(){
   return(
-    <div className="min-h-screen bg-gray-100 py-12">
-      <div className="container mx-auto px-3">
+    <div className="min-h-screen bg-gray-100 py-20">
+      <div className="container mx-auto py-3">
 
         <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
           เกี่ยวกับฉัน👨‍💻 

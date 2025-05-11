@@ -8,8 +8,8 @@ export default function Header(){
                                                     •setIsOpen คือฟังก์ชันสำหรับเปลี่ยนค่า state นี้*/}
 
     return(
-        <header className="bg-white shadow">
-            <nav className="container mx-auto flex items-center justify-between px-4 py-4">
+        <header className="bg-white shadow fixed top-0 left-0 right-0 ">
+            <nav className="container mx-auto flex items-center justify-between px-4 py-4 opacity-55">
                 <div className="text-xl font-bold">
                     <Link href="/">My Portfolio</Link>
                 </div>

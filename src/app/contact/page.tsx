@@ -12,7 +12,7 @@ export default function ContactPage(){
     useEffect(()=>{
         const fetchProjects = async () =>{
             try{
-                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/projects`);
+                const response = await fetch(`http://localhost:3001/projects`);
                 const data = await response.json();
                 setProjects(data);
             }
@@ -26,7 +26,7 @@ export default function ContactPage(){
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/projects`, {
+            const res = await fetch(`http://localhost:3001/projects`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -40,7 +40,7 @@ export default function ContactPage(){
             setName("");
             setMessage("");
 
-            const updateRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/projects`);
+            const updateRes = await fetch(`http://localhost:3001/projects`);
             const updateData = await updateRes.json();
             setProjects(updateData);
 
@@ -51,7 +51,7 @@ export default function ContactPage(){
     };
 
     return(
-        <div className="min-h-screen bg-gray-100 py-12">
+        <div className="min-h-screen bg-gray-100 p-20">
             <div className="container mx-auto px-4">
                 <h2 className="text-3xl font-bold mb-4">Contact Me</h2>
                 <form onSubmit={handleSubmit} className="max-w-md space-y-4">

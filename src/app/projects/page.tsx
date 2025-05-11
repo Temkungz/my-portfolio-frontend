@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function Projects() {
   return (
-    <div className="min-h-screen bg-gray-100 py-12">
+    <div className="min-h-screen bg-gray-100 py-20">
       <div className="container mx-auto px-4">
 
         <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">
