@@ -4,6 +4,8 @@ import "./globals.css";
 import Link from "next/link";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+import { CursorProvider } from "./cursor/CursorContext";
+import CustomCursor from "./cursor/cursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,10 +31,8 @@ export default function RootLayout({
         // สามารถทีั่จะใส่โค้ดเต็มๆลงไปได้เลยหรือจะเชื่อม path แบบนี้ก็ได้
     <html lang="en">
       <body>
-      <Header />
-        
-
-        <main>{children}</main>
+        <Header />
+        <CursorProvider>{children}</CursorProvider>
         <Footer />
 
       </body>

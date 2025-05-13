@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion"
+import Cursor from "../cursor/cursor";
+
 
 
 export default function ContactPage(){
