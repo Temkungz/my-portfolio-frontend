@@ -11,7 +11,7 @@ export default function Header(){
     const { setActive } = useCursor(); // 🟢 ดึง context
 
     return(
-        <header className="fixed top-0 left-0 right-0 bg-white shadow z-50 " >
+        <header className=" fixed top-0 left-0 right-0 bg-white shadow z-50 " >
             <nav className="container mx-auto flex items-center justify-between px-4 py-4">
                 <motion.div
                 whileHover={{scale: 1.2, paddingLeft: 8, paddingRight: 8}}
@@ -84,7 +84,7 @@ export default function Header(){
                      whileHover={{scale: 1.2, paddingLeft: 8, paddingRight: 8}}
                       whileTap={{scale: 0.9}}
                       transition={{ type:"spring", stiffness: 300}}
-                      className="cursor-pointer hover:bg-gray-200 transition-colors duration-300  rounded-full">
+                      className="cursor-pointer hover:bg-gray-200 transition-colors duration-300  rounded-full ">
                     <Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link></motion.li>
                
                 </ul>

@@ -8,6 +8,12 @@ module.exports = {
   ],
   theme: {
   	extend: {
+		fontFamily: {
+			playfair: ['var(--font-playfair)'],
+			geistMono: ['var(--font-geist-mono)'],
+			poetsenOne: ['var(--font-poetsen)'],
+			spaceGrotesk: ['var(--font-spacegrotesk)'],
+		  },
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',

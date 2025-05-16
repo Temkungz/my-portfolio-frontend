@@ -1,4 +1,4 @@
-import Timeline from "@/components/ui/Timeline";
+import Timeline from "@/app/components/Timeline";
 import Image from "next/image";
 import { Phone, Mail, Home } from "lucide-react";
 

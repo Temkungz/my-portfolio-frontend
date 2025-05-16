@@ -1,6 +1,6 @@
 // components/Timeline.tsx
 import { BookOpen, Monitor, Award, Globe, Trophy, ClipboardList } from "lucide-react";
-import TimelineItem from "@/components/ui/Timelineitem";
+import TimelineItem from "./Timelineitem";
 
 export default function Timeline() {
   return (
