@@ -4,8 +4,9 @@ import { Geist, Geist_Mono, Playfair_Display, Poetsen_One, Space_Grotesk, } from
 import "./globals.css";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
-import { CursorProvider } from "./cursor/CursorContext";
-import PageTransitionWrapper from "@/app/components/PageTransitionWrapper"; // ✅ client wrapper
+// import { CursorProvider } from "./cursor/CursorContext";
+import CustomCursor from "./cursor/cursor";
+import PageTransitionWrapper from "@/app/components/PageTransitionWrapper"; // ✅ client wrapper for pages transition
 
 
 const geistSans = Geist({
@@ -48,18 +49,18 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // const pathname = usePathname();key={pathname}
 
   return (
     <html lang="en">
       <body className={`${poetsen.variable} ${playfair.variable} ${spaceGrotesk.variable}`}>
       <Header />
-        <CursorProvider>
+      <CustomCursor/>
+        {/* <CursorProvider> */}
           {/* ✅ ใส่ PageTransitionWrapper */}
           <PageTransitionWrapper>
             {children}
           </PageTransitionWrapper>
-        </CursorProvider>
+        {/* </CursorProvider> */}
         <Footer />
       </body>
     </html>

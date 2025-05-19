@@ -1,11 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion"
-import Cursor from "../cursor/cursor";
 
-
-
-export default function ContactPage(){
+export default function Contact(){
 
     const [name, setName]= useState("");
     const [message, setMessage]= useState("");
@@ -53,7 +50,7 @@ export default function ContactPage(){
     };
 
     return(
-        <div className="min-h-screen bg-gray-100 p-20">
+        <div className="min-h-screen bg-gray-100 p-20">            
             <div className="container mx-auto px-4">
                 <h2 className="text-3xl font-bold mb-4">Contact Me</h2>
                 <form onSubmit={handleSubmit} className="max-w-md space-y-4">

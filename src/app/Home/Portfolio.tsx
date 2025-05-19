@@ -1,7 +1,5 @@
 // app/Home/Portfolio.tsx
 "use client";
-import { motion } from "framer-motion";
-import Cursor from "../cursor/cursor";
 import Timeline from "../components/Timeline";
 import ExperienceList from "../components/ExperienceList";
 import SkillsList from "../components/SkillsList";

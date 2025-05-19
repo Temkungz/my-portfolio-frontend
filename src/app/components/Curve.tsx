@@ -99,7 +99,7 @@ const SVG = ({
   return (
     <motion.svg
       {...anim(translate)}
-      className="fixed top-0 left-0 w-screen h-[calc(100vh+600px)] pointer-events-none "
+      className="fixed top-0 left-0 w-screen h-[calc(100vh+600px)] pointer-events-none z-10"
     >
       <motion.path
         {...anim(curve(initialPath, targetPath))}
