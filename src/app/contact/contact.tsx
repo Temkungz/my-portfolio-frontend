@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion"
+import FadeInPage from "../components/fade";
 
 export default function Contact(){
 
@@ -50,7 +51,8 @@ export default function Contact(){
     };
 
     return(
-        <div className="min-h-screen bg-gray-100 p-20">            
+        <div className="min-h-screen bg-gray-100 p-20">
+            <FadeInPage>    
             <div className="container mx-auto px-4">
                 <h2 className="text-3xl font-bold mb-4">Contact Me</h2>
                 <form onSubmit={handleSubmit} className="max-w-md space-y-4">
@@ -95,6 +97,7 @@ export default function Contact(){
                     </ul>
                 </div>
             </div>
+            </FadeInPage>
         </div>
     );
 }

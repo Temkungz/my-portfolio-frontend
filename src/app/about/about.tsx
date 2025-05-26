@@ -1,8 +1,20 @@
-import Image from "next/image";
+"use client"
 
+import Image from "next/image";
+import FadeInPage from "../components/fade";
 export default function AboutPage(){
+//   const anim = (variants: any) => {
+//   return {
+//     variants: {fade},
+//     initial: "initial",
+//     animate: "enter",
+//     exit: "exit",
+//   };
+// };
   return(
+  
     <div className="min-h-screen bg-gray-100 py-20">
+      <FadeInPage>
       <div className="container mx-auto py-3">
 
         <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
@@ -24,11 +36,13 @@ export default function AboutPage(){
 
         <h2 className="text-xl md:text-2xl font-semibold text-gray-800 mb-3">
         🛠 ทักษะ
+   
         </h2>
         <div>
+       
           
                          
-                       
+             
         <ul className=" flex flex-wrap  rounded-full gap-3 mb-3">
           <li className="w-16 h-16 bg-red-300 font-bold px-3 py-1 rounded-full  ">     
                               <Image 
@@ -59,7 +73,7 @@ export default function AboutPage(){
         </ul>
         </div>
       </div>
-  
+    </FadeInPage>
     </div>
   );
 }

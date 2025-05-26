@@ -5,10 +5,13 @@ import ExperienceList from "../components/ExperienceList";
 import SkillsList from "../components/SkillsList";
 import SoftSkillsList from "../components/SoftSkillsList";
 import Section from "../components/Section";
+import FadeInPage from "../components/fade";
 
 export default function Portfolio() {
   return (
+   
     <main className="order-1 md:order-2 w-full md:w-2/3 bg-white p-10 ">
+       <FadeInPage>
       <div className="text-center mt-10">
         <h1 className="text-xl md:text-4xl font-bold">Sahaphap Prommanok</h1>
         <p className="text-gray-600">Frontend Developer</p>
@@ -34,6 +37,7 @@ export default function Portfolio() {
           </Section>
         </div>
       </div>
+      </FadeInPage>
     </main>
   );
 }

@@ -9,7 +9,7 @@ export default function Header(){
                                                     
 
     return(
-        <header className=" fixed top-0 left-0 right-0 bg-white shadow z-[999] " >
+        <header className="fixed top-0 left-0 right-0 bg-white/70 backdrop-blur-lg shadow z-[999] " >
             <nav className="container mx-auto flex items-center justify-between px-4 py-4">
                 <Link href="/" onClick={() => setIsOpen(false)}> {/*legacyBehavior จำเป็นเมื่อใช้ Link + motion.a*/}
                     <motion.div
@@ -18,7 +18,7 @@ export default function Header(){
                       whileHover={{ paddingLeft: 8, paddingRight: 8}}
                       whileTap={{ scale: 0.9 }}
                       transition={{ type: "spring", stiffness: 300 }}
-                      className="cursor-pointer hover:bg-gray-200 transition-colors duration-300  rounded-full text-xl font-bold">
+                      className="cursor-pointer hover:bg-black hover:text-white transition-colors duration-300  rounded-full text-xl font-bold">
                       My Portfolio
                     </motion.div>
                 </Link>
@@ -64,7 +64,7 @@ export default function Header(){
                       whileHover={{ paddingLeft: 8, paddingRight: 8}}
                       whileTap={{ scale: 0.9 }}
                       transition={{ type: "spring", stiffness: 300 }}
-                      className="cursor-pointer hover:bg-gray-200 transition-colors duration-300  rounded-full">
+                      className="cursor-pointer hover:bg-black hover:text-white transition-colors duration-300  rounded-full">
                       Home
                     </motion.li>
                     </Link>
@@ -74,7 +74,7 @@ export default function Header(){
                       whileHover={{ paddingLeft: 8, paddingRight: 8}}
                       whileTap={{ scale: 0.9 }}
                       transition={{ type: "spring", stiffness: 300 }}
-                      className="cursor-pointer hover:bg-gray-200 transition-colors duration-300  rounded-full">
+                      className="cursor-pointer hover:bg-black hover:text-white transition-colors duration-300  rounded-full">
                       About
                     </motion.li>
                     </Link>
@@ -84,7 +84,7 @@ export default function Header(){
                       whileHover={{ paddingLeft: 8, paddingRight: 8}}
                       whileTap={{ scale: 0.9 }}
                       transition={{ type: "spring", stiffness: 300 }}
-                      className="cursor-pointer hover:bg-gray-200 transition-colors duration-300  rounded-full">
+                      className="cursor-pointer hover:bg-black hover:text-white transition-colors duration-300  rounded-full">
                       Projects
                     </motion.li>
                     </Link>
@@ -94,7 +94,7 @@ export default function Header(){
                       whileHover={{ paddingLeft: 8, paddingRight: 8}}
                       whileTap={{ scale: 0.9 }}
                       transition={{ type: "spring", stiffness: 300 }}
-                      className="cursor-pointer hover:bg-gray-200 transition-colors duration-300  rounded-full">
+                      className="cursor-pointer hover:bg-black hover:text-white transition-colors duration-300  rounded-full">
                       contact
                     </motion.li>
                     </Link>

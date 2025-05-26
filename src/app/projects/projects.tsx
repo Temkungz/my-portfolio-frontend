@@ -1,10 +1,13 @@
 "use client";
 import {motion} from "framer-motion";
-import { useEffect, useState } from "react";
+import Image from "next/image";
+import FadeInPage from "../components/fade";
 
 export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-gray-100 py-20">
+          <FadeInPage>
+
       <div className="container mx-auto px-4">
 
         <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">
@@ -17,10 +20,17 @@ export default function ProjectsPage() {
           <motion.div className="bg-white rounded-lg shadow-md overflow-hidden"
                       whileHover={{ scale: 1.05}}
                       whileTap={{scale: 0.9}}>
-          <img src="https://placehold.co/400x200/png" alt="Project 1" className="w-full"/>
+                    <Image 
+                    src="/image/majorrete.png"
+                    alt="Graduate project picture"
+                    width={1200}
+                    height={800}
+                    className="object-cover w-auto h-auto"
+                    />  
+
           <div className="p-4">
-              <h2 className="text-xl font-bold text-gray-800">ชื่อผลงาน 1</h2>
-              <p className="text-gray-600 mt-2">คำอธิบายสั้นๆ ของผลงาน 1</p>
+              <h2 className="text-xl font-bold text-gray-800">Graduated Project</h2>
+              <p className="text-gray-600 mt-2">Item counting system for padding process of Majorette Thailand Co.,Ltd.</p>
             </div>
           </motion.div>
 
@@ -28,10 +38,17 @@ export default function ProjectsPage() {
           <motion.div className="bg-white rounded-lg shadow-md overflow-hidden"
                       whileHover={{ scale: 1.05}}
                       whileTap={{scale: 0.9}}>
-          <img src="https://placehold.co/400x200/png" alt="Project 2" className="w-full"/>
-          <div className="p-4">
-              <h2 className="text-xl font-bold text-gray-800">ชื่อผลงาน 2</h2>
-              <p className="text-gray-600 mt-2">คำอธิบายสั้นๆ ของผลงาน 2</p>
+                    <Image
+                    src="/image/mnist.png"
+                    alt="Mnist picture"
+                    width={1200}
+                    height={800}
+                    className="object-cover w-auto h-auto"
+                    />
+
+            <div className="p-4">
+              <h2 className="text-xl font-bold text-gray-800">CNN project by MNIST</h2>
+              <p className="text-gray-600 mt-2">Trained machine learning models using the MNIST dataset to recognize handwritten digits</p>
             </div>
           </motion.div>
 
@@ -49,6 +66,7 @@ export default function ProjectsPage() {
         </div>
 
       </div>
+    </FadeInPage>
     </div>
   );
 }

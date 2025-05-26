@@ -1,10 +1,22 @@
-import Timeline from "@/app/components/Timeline";
+"use client"
 import Image from "next/image";
 import { Phone, Mail, Home } from "lucide-react";
+import {motion} from "framer-motion"
+import FadeInPage from "../components/fade";
 
 export default function Introduction(){
 return(
+
+
    <aside className="order-1 md:oreder-2 w-full md:w-2/3 px-10 pt-20 flex flex-col justify-between bg-gray-100 " >
+    <FadeInPage>
+      {/* <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 20 }}
+      transition={{ duration: 0.6, delay: 0.75 }}
+    > */}
+
       <div className="flex flex-col items-center justify-center">
         <div className="w-96 h-96 rounded-full overflow-hidden shadow-xl bg-gray-200 ">
           <Image 
@@ -65,7 +77,10 @@ return(
       </ul>
       
     </div>
+    </FadeInPage>
+    {/* </motion.div> */}
   </aside>
+
 
     );
 }

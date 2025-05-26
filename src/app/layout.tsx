@@ -44,12 +44,7 @@ export const metadata: Metadata = {
   
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-
+export default function RootLayout({children,}: {children: React.ReactNode;}) {
   return (
     <html lang="en">
       <body className={`${poetsen.variable} ${playfair.variable} ${spaceGrotesk.variable}`}>
@@ -58,6 +53,7 @@ export default function RootLayout({
         {/* <CursorProvider> */}
           {/* ✅ ใส่ PageTransitionWrapper */}
           <PageTransitionWrapper>
+
             {children}
           </PageTransitionWrapper>
         {/* </CursorProvider> */}
