@@ -1,10 +1,10 @@
 // app/Home/Portfolio.tsx
 "use client";
-import Timeline from "../components/Timeline";
-import ExperienceList from "../components/ExperienceList";
-import SkillsList from "../components/SkillsList";
-import SoftSkillsList from "../components/SoftSkillsList";
-import Section from "../components/Section";
+import Timeline from "../HomeComponent/Timeline";
+import ExperienceList from "../HomeComponent/ExperienceList";
+import SkillsList from "../HomeComponent/SkillsList";
+import SoftSkillsList from "../HomeComponent/SoftSkillsList";
+import Section from "../HomeComponent/Section";
 import FadeInPage from "../components/fade";
 
 export default function Portfolio() {
