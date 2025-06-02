@@ -1,5 +1,5 @@
 import { title } from "process";
-import AboutPage from "./about";
+import AboutPage from "./AboutPage";
 import { icons } from "lucide-react";
 
 export const generateMetadata = () => ({

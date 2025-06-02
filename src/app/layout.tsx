@@ -6,7 +6,7 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 // import { CursorProvider } from "./cursor/CursorContext";
 import CustomCursor from "./cursor/cursor";
-import PageTransitionWrapper from "@/app/components/PageTransitionWrapper"; // ✅ client wrapper for pages transition
+import PageTransitionWrapper from "./components/PageTransitionWrapper"; // Fixed import path
 
 
 const geistSans = Geist({
