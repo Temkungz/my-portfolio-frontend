@@ -2,6 +2,7 @@
 import {useState} from "react"; //ใช้สำหรับจัดการ state ภายใน component function ซึ่งในที่นี้ใช้ควบคุมสถานะว่าเมนู (Menu Links) เปิดหรือปิดอยู่
 import Link from "next/link"; //Link ช่วยให้การนำทางในแอป Next.js นั้นเป็นแบบ client-side routing (ไม่โหลดหน้าใหม่ทั้งหมด)
 import { motion, spring } from "framer-motion";
+import ButtonENTH from "./ButtonENTH";
 
 
 export default function Header(){
@@ -98,8 +99,15 @@ export default function Header(){
                       contact
                     </motion.li>
                     </Link>
+                    <ButtonENTH/>
+
+                  
+                   
+              
+                  
                
                 </ul>
+                
             </nav>
         </header>
     );

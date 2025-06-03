@@ -1,10 +1,10 @@
 // components/Timeline.tsx
-import { BookOpen, Monitor, Award, Globe, Trophy, ClipboardList } from "lucide-react";
+import { BookOpen, Monitor, Award, Globe, Trophy, ClipboardList } from "lucide-react"; // icon จาก library lucide-react
 import TimelineItem from "./Timelineitem";
 
 export default function Timeline() {
   return (
-    <div className="relative">
+    <div className="relative"> {/*  */} 
       {/* เส้น timeline หลัก */}
       <div className="absolute left-5 top-0 h-full border-l-2 border-gray-300"></div>
 
