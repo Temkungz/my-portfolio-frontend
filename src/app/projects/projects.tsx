@@ -1,13 +1,33 @@
 "use client";
-import {motion} from "framer-motion";
-import Image from "next/image";
-import FadeInPage from "../components/fade";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {motion} from "framer-motion";
+import { useState } from "react";
+import Image from "next/image";
+
+import FadeInPage from "../components/fade";
+import ImageModal from "../ProjectComponent/Modal";
 
 export default function ProjectsPage() {
+  const [modalOpen, setModalOpen] = useState(false); // false คือ modal ปิด เป็นค่า default
+  const [modalImage, setModalImage] = useState(""); // รูปภาพที่แสดงใน modal
+
+  // ฟังก์ชันสำหรับเปิด modal
+  const openModal = (imgSrc: string) => { // imgSrc คือรูปภาพที่จะแสดงใน modal
+      setModalImage(imgSrc); // รูปภาพที่แสดงใน modal
+      setModalOpen(true); // เปิด modal
+    };
+  
+    // ฟังก์ชันสำหรับปิด modal
+    const closeModal = () => {
+      setModalImage(""); // รูปภาพที่แสดงใน modal จะถูกเอาออก
+      setModalOpen(false); // ปิด modal
+    };
+    
   return (
+    
     <div className="min-h-screen bg-gray-100 py-20">
           <FadeInPage>
+          <ImageModal openModal={modalOpen} imgSrc={modalImage} closeModal={closeModal}/> {/* การเรียกใช้งาน modal */}
 
       <div className="container mx-auto px-4">
 
@@ -28,6 +48,7 @@ export default function ProjectsPage() {
                 width={1200}
                 height={800}
                 className="object-cover w-auto h-auto"
+                onClick={() => openModal("/image/majorrete.png")}
               />  
 
               <CardHeader>
@@ -39,29 +60,36 @@ export default function ProjectsPage() {
               <CardContent>
                 <p>Item counting system for padding process of Majorette Thailand Co.,Ltd.</p>
               </CardContent>
-          </Card>
+
+            </Card>
           </motion.div>
+        
 
           {/* การ์ดผลงานที่ 2 */}
-          <motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.9}} >
+          <motion.div 
+            whileHover={{scale: 1.05}} 
+            whileTap={{scale: 0.9}} >
             <Card className="h-full">{/* h-full ทำให้การ์ดใหญ่เท่ากัน */}
-              
-              <Image
-                src="/image/mnist.png"
-                alt="Mnist picture" 
-                width={1200}
-                height={800}
-                className="object-cover w-auto h-auto "
-              />
-              <CardHeader>
-                <CardTitle>Handwritten digits recognition</CardTitle>
-                <CardDescription>
-                  1 July 2024 - 31 August 2024
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p>Trained machine learning models using Convolutional Neural Network (CNN) on the MNIST dataset to recognize handwritten digits</p>
-              </CardContent>
+                
+                <Image
+                  src="/image/mnist.png"
+                  alt="Mnist picture" 
+                  width={1200}
+                  height={800}
+                  className="object-cover w-auto h-auto "
+                  onClick={() => openModal("/image/mnist.png")}
+                />
+
+                <CardHeader>
+                  <CardTitle>Handwritten digits recognition</CardTitle>
+                  <CardDescription>
+                    1 July 2024 - 31 August 2024
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p>Trained machine learning models using Convolutional Neural Network (CNN) on the MNIST dataset to recognize handwritten digits</p>
+                </CardContent>
+
             </Card>
           </motion.div>
 
@@ -69,7 +97,6 @@ export default function ProjectsPage() {
           <motion.div 
             whileHover={{scale: 1.05}} 
             whileTap={{scale: 0.9}} >
-
             <Card className="h-full">
             
               <Image
@@ -78,6 +105,7 @@ export default function ProjectsPage() {
                 width={1200}
                 height={800}
                 className="object-cover w-auto h-auto"
+                onClick={() => openModal("/image/react-foundations-certificate.png")}
               />
               
               <CardHeader>
@@ -89,8 +117,8 @@ export default function ProjectsPage() {
               <CardContent>
                 <p>Completed the React Foundations course</p>
               </CardContent>
+
             </Card>
-            
           </motion.div>
         </div>
       </div>
