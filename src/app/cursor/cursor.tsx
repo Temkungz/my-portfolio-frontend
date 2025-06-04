@@ -27,7 +27,7 @@ export default function CustomCursor() {
         };
         checkScreenSize();
         window.addEventListener("resize", checkScreenSize);
-        return()=> window.addEventListener("resize", checkScreenSize);
+        return()=> window.removeEventListener("resize", checkScreenSize);
     }, []);
 
 
