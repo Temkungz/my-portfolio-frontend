@@ -19,7 +19,7 @@ import Image from "next/image";
     useEffect(() => {
       if(!openModal) return;
 
-      const handleKeyDown = (e: KeyboardEvent) => {
+      const handleKeyDown = (e: KeyboardEvent) => { // กำหนดฟังก์ชันสำหรับปิด modal ด้วยการกดปุ่ม Escape
         if (e.key === 'Escape') {
           closeModal();
         }
