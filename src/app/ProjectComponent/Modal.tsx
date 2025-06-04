@@ -1,9 +1,6 @@
 import { XIcon } from "lucide-react";
-<<<<<<< Updated upstream
 import { useState } from "react";
-=======
 import { useEffect } from "react";
->>>>>>> Stashed changes
 import Image from "next/image";
 
  type ImageModalProps = { // กำหนดค่าของ props ที่จะส่งเข้าไปในฟังก์ชัน ImageModal
@@ -13,8 +10,7 @@ import Image from "next/image";
  };
 
  const ImageModal = ({openModal, imgSrc, closeModal}: ImageModalProps) => { // FC คือ Functional Component ที่สามารถรับ props เข้าไปได้
-<<<<<<< Updated upstream
-=======
+
 
     useEffect(() => {
       if(!openModal) return;
@@ -30,7 +26,6 @@ import Image from "next/image";
 
     },[openModal,closeModal]); // การเรียกใช้งาน useEffect ที่จะทำงานเมื่อ openModal หรือ closeModal เปลี่ยนแปลง
 
->>>>>>> Stashed changes
     if (!openModal) return null; // ถ้า openModal เป็น false จะไม่แสดง modal ซึ่งตามใน projects.tsx จะเป็น false เป็นค่า default 
    return (
       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
