@@ -7,10 +7,15 @@ import Image from "next/image";
 import FadeInPage from "../components/fade";
 import ImageModal from "../ProjectComponent/Modal";
 
+import { useLanguage } from "../contexts/LanguageContext";
+
 export default function ProjectsPage() {
   const [modalOpen, setModalOpen] = useState(false); // false คือ modal ปิด เป็นค่า default
   const [modalImage, setModalImage] = useState(""); // รูปภาพที่แสดงใน modal
+  const {t} = useLanguage();
 
+  if(!Array.isArray(t)) return null; // ถ้าไม่ใช่ array ก็ให้เป็น null
+  
   // ฟังก์ชันสำหรับเปิด modal
   const openModal = (imgSrc: string) => { // imgSrc คือรูปภาพที่จะแสดงใน modal
       setModalImage(imgSrc); // รูปภาพที่แสดงใน modal
@@ -32,7 +37,7 @@ export default function ProjectsPage() {
       <div className="container mx-auto px-4">
 
         <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">
-          🚀 My Projects
+          🚀 {t("projectsarticle")}
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch "> {/* items-stretch คือการปรับขนาดการ์ดให้เข้ากับรูปภาพ */}
@@ -52,13 +57,13 @@ export default function ProjectsPage() {
               />  
 
               <CardHeader>
-                <CardTitle>Graduated Project</CardTitle>
+                <CardTitle>{t("projecthead1")}</CardTitle>
                 <CardDescription>
-                  November 2024 - March 2025
+                  {t("date1")}
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p>Item counting system for padding process of Majorette Thailand Co.,Ltd.</p>
+                <p>{t("description1")}</p>
               </CardContent>
 
             </Card>
@@ -81,13 +86,13 @@ export default function ProjectsPage() {
                 />
 
                 <CardHeader>
-                  <CardTitle>Handwritten digits recognition</CardTitle>
+                  <CardTitle>{t("projecthead2")}</CardTitle>
                   <CardDescription>
-                    1 July 2024 - 31 August 2024
+                    {t("date2")}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p>Trained machine learning models using Convolutional Neural Network (CNN) on the MNIST dataset to recognize handwritten digits</p>
+                  <p>{t("description2")}</p>
                 </CardContent>
 
             </Card>
@@ -109,13 +114,13 @@ export default function ProjectsPage() {
               />
               
               <CardHeader>
-                <CardTitle>React Foundations Certificate</CardTitle>
+                <CardTitle>{t("projecthead3")}</CardTitle>
                 <CardDescription>
-                  3 June 2025
+                  {t("date3")}
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p>Completed the React Foundations course</p>
+                <p>{t("description3")}</p>
               </CardContent>
 
             </Card>

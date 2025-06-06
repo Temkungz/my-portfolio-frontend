@@ -7,6 +7,7 @@ import Footer from "@/app/components/Footer";
 // import { CursorProvider } from "./cursor/CursorContext";
 import CustomCursor from "./cursor/cursor";
 import PageTransitionWrapper from "./components/PageTransitionWrapper"; // Fixed import path
+import LanguageProvider  from "./contexts/LanguageContext";
 
 
 const geistSans = Geist({
@@ -48,16 +49,18 @@ export default function RootLayout({children,}: {children: React.ReactNode;}) {
   return (
     <html lang="en">
       <body className={`${poetsen.variable} ${playfair.variable} ${spaceGrotesk.variable}`}>
-      <Header />
-      <CustomCursor/>
-        {/* <CursorProvider> */}
-          {/* ✅ ใส่ PageTransitionWrapper */}
-          <PageTransitionWrapper>
+      <LanguageProvider>
+        <Header />
+        <CustomCursor/>
+          {/* <CursorProvider> */}
+            {/* ✅ ใส่ PageTransitionWrapper */}
+            <PageTransitionWrapper>
 
-            {children}
-          </PageTransitionWrapper>
-        {/* </CursorProvider> */}
-        <Footer />
+              {children}
+            </PageTransitionWrapper>
+          {/* </CursorProvider> */}
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

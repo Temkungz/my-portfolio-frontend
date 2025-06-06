@@ -3,8 +3,14 @@ import Image from "next/image";
 import { Phone, Mail, Home } from "lucide-react";
 import {motion} from "framer-motion"
 import FadeInPage from "../components/fade";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Introduction(){
+    const {t} = useLanguage(); // กำหนด type ของ t เป็น string หรือ array ของ string
+    const address = t("address"); // ดึงค่า address จาก t
+
+    if(!Array.isArray(address)) return null; // ถ้าไม่ใช่ array ก็ให้เป็น null
+    
 return(
 
 
@@ -27,10 +33,10 @@ return(
             className="object-cover"
             />            
         </div>
-        <h1 className="md:text-4xl text-xl font-bold flex flex-wrap">Sahaphap prommanok</h1>
-        <p className="text-gray-600 py-2 text-center">Full Stack Developer</p>          
+        <h1 className="md:text-4xl text-xl font-bold flex flex-wrap">{t("fullname")}</h1>
+        <p className="text-gray-600 py-2 text-center">{t("fullstack")}</p>          
         <h1 className="text-4xl font-bold text-gray-800 mb-10 pt-4">
-          Contact Me
+          {t("contactme")}
         </h1>
         <ul className="text-lg md:text-xl text-gray-600 mb-6 max-w-xl space-y-4">
           <li className="flex items-center">
@@ -50,9 +56,13 @@ return(
               <Home className="w-4 h-4 text-gray-800" />
             </div>
             <span>
-              99/275 Moo 6, Pornthaweewat Village Project 3,<br/> 
-              Khlong Song Subdistrict,Khlong Luang District,<br/> 
-              Pathum Thani 12120, Thailand
+              {/* Ternary operator =>  condition ? if true : if false */}
+              {Array.isArray(address) ? address.map((address, index) => ( //ถ้าเป็น array ก็ให้แสดงผลตามนี้
+                <span key={index}>
+                  {address}
+                  <br />
+                </span>
+              )) : address} {/* : คือ ถ้าไม่ใช่ array ก็ให้เป็น string */}
             </span>
           </li>
         </ul>
