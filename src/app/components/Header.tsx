@@ -7,9 +7,9 @@ import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Header(){
     const [isOpen, setIsOpen] = useState(false); {/*•isOpen เป็น state ที่เก็บสถานะของเมนู (เช่น เปิดหรือปิด)•setIsOpen คือฟังก์ชันสำหรับเปลี่ยนค่า state นี้*/}
-    const {t} = useLanguage();   // กำหนด type ของ t เป็น string หรือ array ของ string                                            
+    const {t} = useLanguage() as {t: (key: string) => string | string[] };   // กำหนด type ของ t เป็น string หรือ array ของ string                                            
 
-    if(!Array.isArray(t)) return null; // ถ้าไม่ใช่ array ก็ให้เป็น null
+    if(!String(t)) return null; // ถ้าไม่ใช่ string ก็ให้เป็น null
     
     return(
         <header className="fixed top-0 left-0 right-0 bg-white/70 backdrop-blur-lg shadow z-[999] " >

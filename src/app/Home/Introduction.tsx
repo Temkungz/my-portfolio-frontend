@@ -6,7 +6,7 @@ import FadeInPage from "../components/fade";
 import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Introduction(){
-    const {t} = useLanguage(); // กำหนด type ของ t เป็น string หรือ array ของ string
+    const {t} = useLanguage() as {t: (key: string) => string | string[]}; // กำหนด type ของ t เป็น string หรือ array ของ string
     const address = t("address"); // ดึงค่า address จาก t
 
     if(!Array.isArray(address)) return null; // ถ้าไม่ใช่ array ก็ให้เป็น null

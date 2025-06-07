@@ -10,7 +10,7 @@ const translations = { en, th};
 const LanguageContext = createContext<{ 
     lang: Language; 
     setLang: (lang: Language) => void; 
-    t: (key: keyof typeof en) => any ; 
+    t: (key: keyof typeof en) => string | string[] | object; // กำหนด type ของ t เป็น string หรือ array ของ string หรือ object
 }>({
     lang: "en",
     setLang: () => {},

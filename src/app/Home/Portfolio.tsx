@@ -7,11 +7,11 @@ import { motion, spring } from "framer-motion";
 import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Portfolio() {
-  const {t} = useLanguage(); // กำหนด type ของ t เป็น string หรือ array ของ string
+  const {t} = useLanguage() as {t: (key: string) => string | string[] }; // กำหนด type ของ t เป็น string หรือ array ของ string
   const Language = t("language");
 
   if(!Array.isArray(Language)) return null; // ถ้าไม่ใช่ array ก็ให้เป็น null
-  
+
   return (
    
     <main className="order-1 md:order-2 w-full md:w-2/3 bg-white p-10 ">

@@ -12,9 +12,9 @@ import { useLanguage } from "../contexts/LanguageContext";
 export default function ProjectsPage() {
   const [modalOpen, setModalOpen] = useState(false); // false คือ modal ปิด เป็นค่า default
   const [modalImage, setModalImage] = useState(""); // รูปภาพที่แสดงใน modal
-  const {t} = useLanguage();
+  const {t} = useLanguage() as {t: (key: string) => string | string[]}; // กำหนด type ของ t เป็น string หรือ array ของ string
 
-  if(!Array.isArray(t)) return null; // ถ้าไม่ใช่ array ก็ให้เป็น null
+  if(!String(t)) return null; // ถ้าไม่ใช่ string ก็ให้เป็น null
   
   // ฟังก์ชันสำหรับเปิด modal
   const openModal = (imgSrc: string) => { // imgSrc คือรูปภาพที่จะแสดงใน modal

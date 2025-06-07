@@ -8,9 +8,10 @@ import Timeline from "../HomeComponent/Timeline";
 import { useLanguage } from "../contexts/LanguageContext";
 
 export default function AboutPage() {
- const {t} = useLanguage();
+ const {t} = useLanguage() as {t: (key: string) => string | string[] }; // กำหนด type ของ t เป็น string หรือ array ของ string
 
-  if(!Array.isArray(t)) return null; // ถ้าไม่ใช่ array ก็ให้เป็น null
+
+  if(!String(t)) return null; // ถ้าไม่ใช่ string ก็ให้เป็น null
   
   return (
 
