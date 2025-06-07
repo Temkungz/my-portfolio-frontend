@@ -3,12 +3,14 @@ import {useState} from "react"; //ใช้สำหรับจัดการ 
 import Link from "next/link"; //Link ช่วยให้การนำทางในแอป Next.js นั้นเป็นแบบ client-side routing (ไม่โหลดหน้าใหม่ทั้งหมด)
 import { motion, spring } from "framer-motion";
 import ButtonENTH from "./ButtonENTH";
-
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Header(){
     const [isOpen, setIsOpen] = useState(false); {/*•isOpen เป็น state ที่เก็บสถานะของเมนู (เช่น เปิดหรือปิด)•setIsOpen คือฟังก์ชันสำหรับเปลี่ยนค่า state นี้*/}
-                                                    
+    const {t} = useLanguage() as {t: (key: string) => string | string[] };   // กำหนด type ของ t เป็น string หรือ array ของ string                                            
 
+    if(!String(t)) return null; // ถ้าไม่ใช่ string ก็ให้เป็น null
+    
     return(
         <header className="fixed top-0 left-0 right-0 bg-white/70 backdrop-blur-lg shadow z-[999] " >
             <nav className="container mx-auto flex items-center justify-between px-4 py-4">
@@ -20,7 +22,7 @@ export default function Header(){
                       whileTap={{ scale: 0.9 }}
                       transition={{ type: "spring", stiffness: 300 }}
                       className="cursor-pointer hover:bg-black hover:text-white transition-colors duration-300  rounded-full text-xl font-bold">
-                      My Portfolio
+                      {t("myportfolio")}
                     </motion.div>
                 </Link>
 
@@ -60,13 +62,11 @@ export default function Header(){
 
                    <Link href="/" onClick={() => setIsOpen(false)}> {/*legacyBehavior จำเป็นเมื่อใช้ Link + motion.a*/}
                     <motion.li
-                    // onMouseEnter={() => setActive(true)}
-                    // onMouseLeave={() => setActive(false)}
                       whileHover={{ paddingLeft: 8, paddingRight: 8}}
                       whileTap={{ scale: 0.9 }}
                       transition={{ type: "spring", stiffness: 300 }}
                       className="cursor-pointer hover:bg-black hover:text-white transition-colors duration-300  rounded-full">
-                      Home
+                      {t("home")}
                     </motion.li>
                     </Link>
 
@@ -76,7 +76,7 @@ export default function Header(){
                       whileTap={{ scale: 0.9 }}
                       transition={{ type: "spring", stiffness: 300 }}
                       className="cursor-pointer hover:bg-black hover:text-white transition-colors duration-300  rounded-full">
-                      About
+                      {t("about")}
                     </motion.li>
                     </Link>
 
@@ -86,7 +86,7 @@ export default function Header(){
                       whileTap={{ scale: 0.9 }}
                       transition={{ type: "spring", stiffness: 300 }}
                       className="cursor-pointer hover:bg-black hover:text-white transition-colors duration-300  rounded-full">
-                      Projects
+                      {t("projects")}
                     </motion.li>
                     </Link>
 
@@ -96,18 +96,12 @@ export default function Header(){
                       whileTap={{ scale: 0.9 }}
                       transition={{ type: "spring", stiffness: 300 }}
                       className="cursor-pointer hover:bg-black hover:text-white transition-colors duration-300  rounded-full">
-                      contact
+                      {t("contact")}
                     </motion.li>
                     </Link>
                     <ButtonENTH/>
 
-                  
-                   
-              
-                  
-               
                 </ul>
-                
             </nav>
         </header>
     );

@@ -4,10 +4,14 @@ import { Phone, Mail, Home, } from "lucide-react";
 import FadeInPage from "../components/fade";
 import Image from "next/image";
 import { motion, spring } from "framer-motion";
-
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Portfolio() {
-  const Language = ["English (basic)","Thai (Native)"];
+  const {t} = useLanguage() as {t: (key: string) => string | string[] }; // กำหนด type ของ t เป็น string หรือ array ของ string
+  const Language = t("language");
+
+  if(!Array.isArray(Language)) return null; // ถ้าไม่ใช่ array ก็ให้เป็น null
+
   return (
    
     <main className="order-1 md:order-2 w-full md:w-2/3 bg-white p-10 ">
@@ -15,29 +19,26 @@ export default function Portfolio() {
       <div className="mt-10">
         {/* Title */}
         <h1 className="text-xl sm:text-xl md:text-4xl lg:text-4xl font-bold   text-gray-800 mb-4 pt-4">
-          About me
+          {t("aboutmearticle")}
         </h1>
 
          {/* About */}
         <p className="text-lg md:text-xl  text-gray-600 mb-6  max-w-xl">
-          "Hello, I'm Sahaphap Prommanok, commonly known as TEM. I'm currently seeking a position as a Full-Stack.
-          I have a strong interest in this field and aspire to enhance my skills further.
-          The reason I am keen to join your company is due to its excellent reputation and positive work environment.
-          I hope to have the opportunity to work alongside your team and contribute to the success of the company."
+         {t("aboutme")}
         </p>
 
          {/* Language */}
         <h1 className="text-4xl font-bold text-gray-800 mb-4 pt-4">
-          Language
+          {t("languagearticle")}
         </h1>
         <ul className="text-lg md:text-xl list-disc list-inside text-gray-600 mb-6 ">
-          {Language.map((lang,index) =>(
+          {Array.isArray(Language) ? Language.map((lang,index) =>( //ถ้าเป็น array ก็ให้แสดงผลตามนี้
             <li key={index}>{lang}</li>
-          ))}
+          )): Language} {/* : คือ ถ้าไม่ใช่ array ก็ให้เป็น string */}
         </ul>
 
         <h1 className="text-4xl font-bold text-gray-800 mb-4 pt-4">
-          Social Media
+          {t("socialmedia")}
         </h1>
         <ul className="grid grid-cols-3 gap-3 text-lg md:text-xl text-gray-600 mb-6 ">
           <li className="flex items-center">

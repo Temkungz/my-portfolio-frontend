@@ -1,6 +1,6 @@
 // components/Section.tsx
 interface SectionProps{ //interface for defining the props of the Section component
-  title: string
+  title: string | string[] //string | string[] คือสามารถส่งค่าเป็น string หรือ array ของ string ก็ได้
   children: React.ReactNode
 }
 
