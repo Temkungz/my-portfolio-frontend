@@ -1,7 +1,7 @@
 // components/SoftSkillsList.tsx
 import { useLanguage } from "../contexts/LanguageContext";
 export default function SoftSkillsList() {
-  const {t} = useLanguage();
+  const {t} = useLanguage() as {t: (key: string) => string | string[] | object };
   const softSkills = t("softskillslist");
  
   if(!Array.isArray(softSkills)) return null; // ถ้าไม่ใช่ array ก็ให้เป็น null
@@ -20,4 +20,4 @@ export default function SoftSkillsList() {
      
     </ul>
   );
-}
+};

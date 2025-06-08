@@ -12,5 +12,5 @@ export default  function Section({title,children}: SectionProps) {
       {children}
     </div>
   );
-}
+};
 

@@ -6,7 +6,6 @@ import {
     useMotionValue, //usemotionvalue: ใช้เก็บค่าที่เปลื่ยนแปลงเคลื่อนไหว
     useSpring //พิ่มความนุ่มนวลแบบสปริงให้กับ motion value
 } from "framer-motion"; 
-import { useCursor } from "./CursorContext"; // custom hook ที่ทำไว้ใน CursorContext
 
 export default function CustomCursor() {
     const mouseX = useMotionValue(0);
@@ -68,4 +67,4 @@ export default function CustomCursor() {
             }}
         ></motion.div>
     );
-}
+};

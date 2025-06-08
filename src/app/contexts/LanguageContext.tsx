@@ -18,9 +18,9 @@ const LanguageContext = createContext<{
 
 });
 
-export const useLanguage = () =>  useContext(LanguageContext);
+ const useLanguage = () =>  useContext(LanguageContext); // ฟังก์ชันที่ใช้สำหรับเรียกใช้งานภาษา
 
-export default function LanguageProvider ({ children }: { children: ReactNode })  {
+ function LanguageProvider  ({ children }: { children: ReactNode })  {
     const [lang, setLang] = useState<Language>("en");
 
     const t = (key:  keyof typeof en) =>  translations[lang][key] || key; // keyof typeof en  คือ key ที่ส่งเข้ามาในฟังก์ชัน t ต้องเป็นชื่อ key ที่มีใน en
@@ -30,4 +30,5 @@ export default function LanguageProvider ({ children }: { children: ReactNode })
             {children}
         </LanguageContext.Provider>
     );
-}
+};
+export {useLanguage, LanguageProvider};

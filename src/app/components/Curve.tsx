@@ -54,6 +54,20 @@ export default function Curve({
 
   }, []);
 
+  const routeTextPosition = (() => { //ฟังก์ชันที่ส่งค่า top ของ text ไปยัง anime.tsx
+    switch(pathname){
+      case "/":
+        return "lg:top-[40%] top-[20%]";
+      case "/about":
+        return "lg:top-[20%] top-[15%]";
+      case "/projects":
+        return "lg:top-[40%] top-[20%]";
+      case "/contact":
+        return "lg:top-[40%] top-[20%]";
+      default:
+        return "lg:top-[40%] top-[20%]";
+    };
+  })();
   return (
     <div className="relative w-full h-full overflow-hidden" style={{ backgroundColor }}>
       {/* Background layer */}
@@ -67,7 +81,7 @@ export default function Curve({
       {/* Route text */}
       <motion.p
         {...anim(text)} //Javascript Spread syntax
-        className="absolute left-1/2 top-[40%] -translate-x-1/2 text-white text-[46px] z-30 text-center"
+        className={`absolute left-1/2 ${routeTextPosition} -translate-x-1/2 text-white text-[46px] z-30 text-center`}
       >
         {routes[pathname as keyof typeof routes]} {/*บอก ts ว่า pathname นี้มีใน route แน่นอน */}
       </motion.p>
@@ -81,7 +95,7 @@ export default function Curve({
       {children}
     </div>
   );
-}
+};
 
 const SVG = ({ //(functional component) width, height = ขนาดของหน้าจอที่วัดได้ด้วย window.innerWidth / Height
   width,

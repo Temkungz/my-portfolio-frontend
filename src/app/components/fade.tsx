@@ -19,4 +19,4 @@ export default function FadeInPage({children,}: {children: React.ReactNode}){
       </motion.div>
     </AnimatePresence>
     );
-}
+};

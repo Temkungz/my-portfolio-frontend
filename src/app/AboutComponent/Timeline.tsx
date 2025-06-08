@@ -4,11 +4,10 @@ import TimelineItem from "./Timelineitem";
 import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Timeline() {
-  const {t} = useLanguage();
+  const {t} = useLanguage() as {t: (key: string) => string | string[] | object };
   const timeline = t("timeline1");
   
   if (!Array.isArray(timeline)) return null;
-
 
   return (
     <div className="relative"> {/*  */} 
@@ -39,4 +38,4 @@ export default function Timeline() {
       })}
     </div>
   );
-}
+};
