@@ -1,7 +1,7 @@
 // components/ExperienceList.tsx
 import { useLanguage } from "../contexts/LanguageContext";
 export default function ExperienceList() {
-  const {t} = useLanguage();
+  const {t} = useLanguage() as {t: (key: string) => string | string[] | object };
   const experiences = t("experience1");
 
   if(!Array.isArray(experiences)) return null; // ถ้าไม่ใช่ array ก็ให้เป็น null
@@ -21,5 +21,5 @@ export default function ExperienceList() {
         )) : experiences}
       </div>
     );
-  }
+  };
   

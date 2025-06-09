@@ -3,11 +3,7 @@
 import { usePathname } from "next/navigation";
 import Curve from "@/app/components/Curve";
 
-export default function PageTransitionWrapper({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function PageTransitionWrapper({children,}: {children: React.ReactNode;}) {
   const pathname = usePathname();
 
   return (
@@ -16,4 +12,4 @@ export default function PageTransitionWrapper({
       {children}
     </Curve>
   );
-}
+};

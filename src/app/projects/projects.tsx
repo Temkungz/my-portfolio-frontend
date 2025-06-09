@@ -6,33 +6,21 @@ import Image from "next/image";
 
 import FadeInPage from "../components/fade";
 import ImageModal from "../ProjectComponent/Modal";
-
+import useProjectModal from "./projectModal";
 import { useLanguage } from "../contexts/LanguageContext";
 
-export default function ProjectsPage() {
-  const [modalOpen, setModalOpen] = useState(false); // false คือ modal ปิด เป็นค่า default
-  const [modalImage, setModalImage] = useState(""); // รูปภาพที่แสดงใน modal
-  const {t} = useLanguage() as {t: (key: string) => string | string[]}; // กำหนด type ของ t เป็น string หรือ array ของ string
 
+export default function ProjectsPage() {
+ 
+  const {modalOpen, modalImage, closeModal, openModal, isMobile} = useProjectModal();
+  const {t} = useLanguage() as {t: (key: string) => string | string[]}; // กำหนด type ของ t เป็น string หรือ array ของ string
   if(!String(t)) return null; // ถ้าไม่ใช่ string ก็ให้เป็น null
-  
-  // ฟังก์ชันสำหรับเปิด modal
-  const openModal = (imgSrc: string) => { // imgSrc คือรูปภาพที่จะแสดงใน modal
-      setModalImage(imgSrc); // รูปภาพที่แสดงใน modal
-      setModalOpen(true); // เปิด modal
-    };
-  
-    // ฟังก์ชันสำหรับปิด modal
-    const closeModal = () => {
-      setModalImage(""); // รูปภาพที่แสดงใน modal จะถูกเอาออก
-      setModalOpen(false); // ปิด modal
-    };
-    
+
   return (
     
     <div className="min-h-screen bg-gray-100 py-20">
           <FadeInPage>
-          <ImageModal openModal={modalOpen} imgSrc={modalImage} closeModal={closeModal}/> {/* การเรียกใช้งาน modal */}
+          <ImageModal openModal={modalOpen} imgsrc={modalImage} closeModal={closeModal}/> {/* การเรียกใช้งาน modal */}
 
       <div className="container mx-auto px-4">
 
@@ -53,7 +41,11 @@ export default function ProjectsPage() {
                 width={1200}
                 height={800}
                 className="object-cover w-auto h-auto"
-                onClick={() => openModal("/image/majorrete.png")}
+                onClick={() => {
+                  if(!isMobile()){
+                    openModal("/image/majorrete.png") // ถ้าไม่ใช่ mobile ก็เปิด modal
+                  }
+                }}
               />  
 
               <CardHeader>
@@ -82,7 +74,11 @@ export default function ProjectsPage() {
                   width={1200}
                   height={800}
                   className="object-cover w-auto h-auto "
-                  onClick={() => openModal("/image/mnist.png")}
+                  onClick={() => {
+                    if(!isMobile()){
+                      openModal("/image/mnist.png") // ถ้าไม่ใช่ mobile ก็เปิด modal
+                    }
+                  }}
                 />
 
                 <CardHeader>
@@ -110,7 +106,11 @@ export default function ProjectsPage() {
                 width={1200}
                 height={800}
                 className="object-cover w-auto h-auto"
-                onClick={() => openModal("/image/react-foundations-certificate.png")}
+                onClick={() => {
+                  if(!isMobile()){
+                    openModal("/image/react-foundations-certificate.png") // ถ้าไม่ใช่ mobile ก็เปิด modal
+                  }
+                }}
               />
               
               <CardHeader>
@@ -130,4 +130,4 @@ export default function ProjectsPage() {
     </FadeInPage>
     </div>
   );
-}
+};

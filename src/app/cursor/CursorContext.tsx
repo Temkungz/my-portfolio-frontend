@@ -23,4 +23,4 @@ export function CursorProvider({ children }: { children: React.ReactNode }) { //
       {children}
     </CursorContext.Provider>
   );
-}
+};

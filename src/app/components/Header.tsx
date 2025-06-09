@@ -18,7 +18,7 @@ export default function Header(){
                     <motion.div
                     // onMouseEnter={() => setActive(true)}
                     // onMouseLeave={() => setActive(false)}
-                      whileHover={{ paddingLeft: 8, paddingRight: 8}}
+                      whileHover={{ scale: 1.1, paddingLeft: 8, paddingRight: 8}}
                       whileTap={{ scale: 0.9 }}
                       transition={{ type: "spring", stiffness: 300 }}
                       className="cursor-pointer hover:bg-black hover:text-white transition-colors duration-300  rounded-full text-xl font-bold">
@@ -27,7 +27,7 @@ export default function Header(){
                 </Link>
 
                 {/* block element lg:hidden คือซ่อนเมื่อหน้าเว็บไซด์แสดงผลที่ขนาด lg (>= 1024px) เมื่อคลิกปุ่มจะทำให้ค่า isOpen เป็น true หรือก็คือเปิดเมนู hamburger */ }
-                <button className="block lg:hidden text-black" onClick={()=>setIsOpen(!isOpen)}>
+                <button className="block lg:hidden text-black" type="button" onClick={()=>setIsOpen(!isOpen)}>
 
                     {/* w-6 h-6 (1.5rem หรือ 24px)มีไว้เพื่อแม็ปภาพ SVG กับขนาดแสดงผลจริง ถ้าไม่มีมันจะไม่แสดงภาพ SVG */}
                     {/*stroke="currentColor": กำหนดให้เส้น (stroke) ใช้สีเดียวกับ currentColor ซึ่งมักจะมาจาก text-black ที่กำหนดไว้ในปุ่ม*/}
@@ -62,7 +62,7 @@ export default function Header(){
 
                    <Link href="/" onClick={() => setIsOpen(false)}> {/*legacyBehavior จำเป็นเมื่อใช้ Link + motion.a*/}
                     <motion.li
-                      whileHover={{ paddingLeft: 8, paddingRight: 8}}
+                      whileHover={{ scale: 1.1, paddingLeft: 8, paddingRight: 8}}
                       whileTap={{ scale: 0.9 }}
                       transition={{ type: "spring", stiffness: 300 }}
                       className="cursor-pointer hover:bg-black hover:text-white transition-colors duration-300  rounded-full">
@@ -72,7 +72,7 @@ export default function Header(){
 
                     <Link href="/about" onClick={() => setIsOpen(false)}>
                     <motion.li
-                      whileHover={{ paddingLeft: 8, paddingRight: 8}}
+                      whileHover={{ scale: 1.1, paddingLeft: 8, paddingRight: 8}}
                       whileTap={{ scale: 0.9 }}
                       transition={{ type: "spring", stiffness: 300 }}
                       className="cursor-pointer hover:bg-black hover:text-white transition-colors duration-300  rounded-full">
@@ -82,7 +82,7 @@ export default function Header(){
 
                     <Link href="/projects" onClick={() => setIsOpen(false)}>
                     <motion.li
-                      whileHover={{ paddingLeft: 8, paddingRight: 8}}
+                      whileHover={{ scale: 1.1, paddingLeft: 8, paddingRight: 8}}
                       whileTap={{ scale: 0.9 }}
                       transition={{ type: "spring", stiffness: 300 }}
                       className="cursor-pointer hover:bg-black hover:text-white transition-colors duration-300  rounded-full">
@@ -92,7 +92,7 @@ export default function Header(){
 
                     <Link href="/contact" onClick={() => setIsOpen(false)}>
                     <motion.li
-                      whileHover={{ paddingLeft: 8, paddingRight: 8}}
+                      whileHover={{ scale: 1.1, paddingLeft: 8, paddingRight: 8}}
                       whileTap={{ scale: 0.9 }}
                       transition={{ type: "spring", stiffness: 300 }}
                       className="cursor-pointer hover:bg-black hover:text-white transition-colors duration-300  rounded-full">
@@ -105,4 +105,4 @@ export default function Header(){
             </nav>
         </header>
     );
-}
+};

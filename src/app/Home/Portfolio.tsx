@@ -49,7 +49,7 @@ export default function Portfolio() {
               width={32}
               height={32}
               className="object-cover"/> 
-              </div>            
+            </div>            
           
             <motion.a 
               href="https://web.facebook.com/koon.tem/" 
@@ -183,4 +183,4 @@ export default function Portfolio() {
       </FadeInPage>
     </main>
   );
-}
+};

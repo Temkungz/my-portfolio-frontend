@@ -1,11 +1,11 @@
 "use client";
 import FadeInPage from "../components/fade";
-import ExperienceList from "../HomeComponent/ExperienceList";
-import Section from "../HomeComponent/Section";
-import SkillsList from "../HomeComponent/SkillsList";
-import SoftSkillsList from "../HomeComponent/SoftSkillsList";
-import Timeline from "../HomeComponent/Timeline";
-import { useLanguage } from "../contexts/LanguageContext";
+import ExperienceList from "../AboutComponent/ExperienceList";
+import Section from "../AboutComponent/Section";
+import SkillsList from "../AboutComponent/SkillsList";
+import SoftSkillsList from "../AboutComponent/SoftSkillsList";
+import Timeline from "../AboutComponent/Timeline";
+import { useLanguage } from "../contexts/LanguageContext"; //
 
 export default function AboutPage() {
  const {t} = useLanguage() as {t: (key: string) => string | string[] }; // กำหนด type ของ t เป็น string หรือ array ของ string
@@ -45,4 +45,4 @@ export default function AboutPage() {
       </FadeInPage>
     </div>
   );
-}
+};
